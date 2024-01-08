@@ -23,4 +23,5 @@ public class Pessoa {
     private LocalDate dataNascimento;
     @OneToMany(mappedBy = "pessoa")
     private List<Telefone> telefones;
+
 }

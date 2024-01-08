@@ -1,6 +1,7 @@
 package com.example.nathan.aula5.controller;
 
 import com.example.nathan.aula5.model.Pessoa;
+import com.example.nathan.aula5.model.dto.PessoaDTO;
 import com.example.nathan.aula5.service.PessoaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -18,9 +19,9 @@ public class PessoaController {
     private PessoaService pessoaService;
 
     @GetMapping
-    public ResponseEntity<List<Pessoa>> buscarPessoas() {
+    public ResponseEntity<List<PessoaDTO>> buscarPessoas() {
 
-        List<Pessoa> pessoas = pessoaService.getPessoas();
+        List<PessoaDTO> pessoas = pessoaService.getPessoas();
         return ResponseEntity.ok().body(pessoas);
 
     }
