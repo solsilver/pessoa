@@ -14,13 +14,13 @@ import java.util.List;
 @Table
 public class Pessoa {
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String nome ;
+    private String nome;
     private String genero;
     private String email;
-    private String CPF;
+    private String cpf;
     private LocalDate dataNascimento;
-    @OneToMany(mappedBy = "pessoa" , cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "pessoa")
     private List<Telefone> telefones;
 }

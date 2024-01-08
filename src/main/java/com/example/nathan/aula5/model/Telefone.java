@@ -9,14 +9,14 @@ import lombok.Setter;
 @Entity
 public class Telefone {
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private Integer ddd;
 
     private String numero;
     @ManyToOne
-    @JoinColumn(name =  "pessoa_id")
+    @JoinColumn(name = "pessoa_id")
     private Pessoa pessoa;
 
 }
