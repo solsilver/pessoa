@@ -22,4 +22,11 @@ public class DisciplinaService {
     public List<Disciplina> buscasDisciplinasbyIds(List<Long> disciplinasid) {
         return disciplinaRepository.findAllById(disciplinasid);
     }
+
+    public void vinculaEstudante(List<Disciplina> disciplinas, Estudante estudante) {
+        for( Disciplina disciplina : disciplinas){
+            disciplina.addEstudante(estudante);
+        }
+            disciplinaRepository.saveAll(disciplinas);
+    }
 }

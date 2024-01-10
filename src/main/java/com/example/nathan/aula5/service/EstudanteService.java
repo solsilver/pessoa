@@ -22,6 +22,7 @@ public class EstudanteService {
         Estudante estudante =  estudateRepository.findById(id).get();
         List<Disciplina> disciplinas = disciplinaService.buscasDisciplinasbyIds(disciplinasid.getDisciplinasIDs()
                 .stream().toList());
+        disciplinaService.vinculaEstudante( disciplinas , estudante);
         estudante.setDisciplinas(disciplinas);
         return estudateRepository.save(estudante);
     }
@@ -33,6 +34,6 @@ public class EstudanteService {
     }
     public List< Estudante> getAll(){
         List<Estudante> estudantes = estudateRepository.findAll();
-
+        return estudantes;
     }
 }
